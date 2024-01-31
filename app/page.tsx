@@ -4,21 +4,18 @@ import { Button, Grid } from "@mui/material";
 import Link from "next/link";
 import styles from "./style.module.css";
 import PersistentDrawerLeft from "@/components/PersistentDrawerLeft";
+import HeaderComponent from "@/components/header/HeaderComponent";
 
 export default function Home() {
+  const theme = {
+    colors: {
+      color: "red",
+    },
+  };
+
   return (
-    <PersistentDrawerLeft>
-      <main className={styles.main}>
-        <Grid container spacing={3} justifyContent="center" alignItems="center">
-          <Grid item xs={8}>
-            <Link href={{ pathname: "test" }} as="test">
-              <Button variant="outlined" sx={{ height: 55 }} fullWidth>
-                診断する
-              </Button>
-            </Link>
-          </Grid>
-        </Grid>
-      </main>
-    </PersistentDrawerLeft>
+    <main className={styles.main}>
+      <HeaderComponent />
+    </main>
   );
 }
